@@ -49,6 +49,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp"
         android:text="Recordarme"
+        android:theme="@style/checkbox"
         android:layout_below="@id/contraseña"/>
 
     <TextView

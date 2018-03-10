@@ -37,6 +37,11 @@
 
     </style>
 
+    <style name="checkbox"
+        >
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
 
 
 </resources>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.eduardopalacios.ciclodevida.MainActivity">
+
+    <include
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar">
+    </include>
+
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:padding="15dp">
+
+
+            <ImageView
+                android:id="@+id/nameIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignTop="@id/text_input_layout_nombre"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/ic_action_name" />
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/text_input_layout_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/nameIcon"
+                android:hint="Nombre"
+                app:counterEnabled="true"
+                app:counterMaxLength="10">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/editTextNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <ImageView
+                android:id="@+id/phoneIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignTop="@id/text_input_layout_telefono"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/ic_phone" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/text_input_layout_telefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_input_layout_nombre"
+                android:layout_marginTop="30dp"
+                android:layout_toRightOf="@id/phoneIcon"
+                android:hint="Telefono"
+                app:counterEnabled="true"
+                app:counterMaxLength="10">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/editTextTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <ImageView
+                android:id="@+id/emailIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignTop="@id/text_input_layout_Correo"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/ic_email" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/text_input_layout_Correo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_input_layout_telefono"
+                android:layout_marginTop="30dp"
+                android:layout_toRightOf="@id/emailIcon"
+                android:hint="Correo"
+                app:counterEnabled="true"
+                app:counterMaxLength="10">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/editTextCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_input_layout_Correo"
+                android:layout_marginTop="200dp">
+
+                <Button
+                    android:id="@+id/cancelar"
+                    style="@style/Botones"
+                    android:layout_marginRight="10dp"
+
+                    android:text="Cancelar"
+
+
+                    />
+
+                <Button
+                    android:id="@+id/aceptar"
+                    style="@style/Botones"
+                    android:text="ACEPTAR" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

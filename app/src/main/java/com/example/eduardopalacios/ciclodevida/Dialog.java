@@ -83,65 +83,6 @@ public class Dialog {
         dialog.show();
     }
 
-    public  void Dialogolayout()
-    {
-       //
-        // ColorStateList myList = new ColorStateList(states, colors);
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View v = inflater.inflate(R.layout.layoutdialog, null);
 
 
-        final CheckBox checkBox=(CheckBox)v.findViewById(R.id.recordarme);
-
-        checkBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (checkBox.isChecked())
-                {
-                    Toast.makeText(context,"correcto",Toast.LENGTH_SHORT).
-                            show();
-                }
-            }
-        });
-        Button cancelar=(Button)v.findViewById(R.id.cancelar);
-        //
-        // setButtonTint(cancelar,myList);
-
-        Button aceptar=(Button)v.findViewById(R.id.aceptar);
-        //
-        // setButtonTint(aceptar,myList);
-
-        builder.setView(v);
-
-        final AlertDialog dialog = builder.create();
-
-        cancelar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-             dialog.cancel();
-            }
-        });
-
-        aceptar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        dialog.show();
-
-
-
-    }
-
-
-    //@SuppressLint("RestrictedApi")
-    //public static void setButtonTint(Button button, ColorStateList tint) {
-      //  if (Build.VERSION.SDK_INT == Build.VERSION_CODES.LOLLIPOP && button instanceof AppCompatButton) {
-        //    ((AppCompatButton) button).setSupportBackgroundTintList(tint);
-        //} else {
-          //  ViewCompat.setBackgroundTintList(button, tint);
-        //}
-    //}
 }

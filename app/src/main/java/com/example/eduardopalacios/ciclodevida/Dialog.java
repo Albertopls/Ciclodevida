@@ -23,14 +23,6 @@ import android.widget.Toast;
 public class Dialog {
 
     Context context;
-    //int[][] states = new int[][] {
-      //      new int[] { android.R.attr.state_enabled},
-
-    //};
-
-    //int[] colors = new int[] {
-      //      Color.parseColor("#ccf20b49")
-    //};
 
 
     public Dialog(Context context)

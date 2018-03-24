@@ -23,6 +23,17 @@ import android.widget.Toast;
 public class Dialog {
 
     Context context;
+    Button cancelar,aceptar;
+
+
+    //int[][] states = new int[][] {
+      //      new int[] { android.R.attr.state_enabled},
+
+    //};
+
+    //int[] colors = new int[] {
+      //      Color.parseColor("#ccf20b49")
+    //};
 
 
     public Dialog(Context context)
@@ -75,6 +86,68 @@ public class Dialog {
         dialog.show();
     }
 
+    public  void Dialogolayout()
+    {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setView(diseño_Layout());
+
+        final AlertDialog dialog = builder.create();
+
+        cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+             dialog.cancel();
+            }
+        });
+
+        aceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        dialog.show();
 
 
+
+    }
+
+    public View diseño_Layout()
+    {
+
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View v = inflater.inflate(R.layout.layoutdialog, null);
+
+
+        cancelar=(Button)v.findViewById(R.id.cancelar);
+        aceptar=(Button)v.findViewById(R.id.aceptar);
+
+        final CheckBox checkBox=(CheckBox)v.findViewById(R.id.recordarme);
+
+
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked())
+                {
+                    Toast.makeText(context,"correcto",Toast.LENGTH_SHORT).
+                            show();
+                }
+            }
+        });
+
+
+        return v;
+    }
+
+
+    //@SuppressLint("RestrictedApi")
+    //public static void setButtonTint(Button button, ColorStateList tint) {
+      //  if (Build.VERSION.SDK_INT == Build.VERSION_CODES.LOLLIPOP && button instanceof AppCompatButton) {
+        //    ((AppCompatButton) button).setSupportBackgroundTintList(tint);
+        //} else {
+          //  ViewCompat.setBackgroundTintList(button, tint);
+        //}
+    //}
 }

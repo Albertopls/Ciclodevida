@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     Context context=this;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,21 +38,76 @@ public class MainActivity extends AppCompatActivity {
         aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                validate(view);
                 Dialog dialog=new Dialog(context);
-                dialog.Dialoglista();
+                dialog.Dialogolayout();
 
+                Log.d("tag",nombre.getEditText().getText().toString());
             }
         });
 
     }
 
+    public void validate(View view) {
+        String mailError = null;
+        if (nombre.getEditText().length()>=10||nombre.getEditText().length()==0) {
+            mailError = "error";
+        }
+        toggleTextInputLayoutError(nombre, mailError);
 
 
 
 
+       nombre.clearFocus();
+    }
 
 
+    public void toggleTextInputLayoutError(TextInputLayout textInputLayout,String msg) {
+        textInputLayout.setError(msg);
+        if (msg == null) {
+            textInputLayout.setErrorEnabled(false);
+        } else {
+            textInputLayout.setErrorEnabled(true);
+        }
+    }
 
+
+    @Override
+    protected void onStart() {
+
+        Toast.makeText(getApplicationContext(),"onStart",Toast.LENGTH_SHORT).show();
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        Toast.makeText(getApplicationContext(),"onResume",Toast.LENGTH_SHORT).show();
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        Toast.makeText(getApplicationContext(),"onPause",Toast.LENGTH_SHORT).show();
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Toast.makeText(getApplicationContext(),"onStop",Toast.LENGTH_SHORT).show();
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Toast.makeText(getApplicationContext(),"onDestroy",Toast.LENGTH_SHORT).show();
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onRestart() {
+        Toast.makeText(getApplicationContext(),"onRestart",Toast.LENGTH_SHORT).show();
+        super.onRestart();
+    }
 
 
 

@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toast.makeText(getApplication(),"on Create",Toast.LENGTH_LONG).show();
         nombre=(TextInputLayout)findViewById(R.id.text_input_layout_nombre);
         aceptar=(Button)findViewById(R.id.aceptar);
         toolbar=(Toolbar)findViewById(R.id.toolbar);
